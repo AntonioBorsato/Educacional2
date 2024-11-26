@@ -1,4 +1,6 @@
 package grupointegrado.com.educacional.turmas.dto;
 
-public record TurmaRequestDTO(Integer ano, Integer semestre) {
+import grupointegrado.com.educacional.cursos.model.Curso;
+
+public record TurmaRequestDTO(Integer ano, Integer semestre, Curso curso) {
 }

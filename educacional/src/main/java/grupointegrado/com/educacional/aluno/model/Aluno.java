@@ -22,6 +22,7 @@ public class Aluno {
     private String matricula;
 
     @Column
+    @Temporal(TemporalType.DATE)
     private Date data_nascimento;
 
     public Integer getId() {

@@ -1,6 +1,7 @@
 package grupointegrado.com.educacional.disciplinas.model;
 
 import grupointegrado.com.educacional.cursos.model.Curso;
+import grupointegrado.com.educacional.professores.model.Professor;
 import jakarta.persistence.*;
 
 @Entity
@@ -20,6 +21,10 @@ public class Disciplina {
     @ManyToOne
     @JoinColumn(name = "curso_id", referencedColumnName = "id")
     private Curso curso;
+
+    @ManyToOne
+    @JoinColumn(name = "professor_id", referencedColumnName = "id")
+    private Professor professor;
 
     public Integer getId() {
         return id;
@@ -51,5 +56,13 @@ public class Disciplina {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 }

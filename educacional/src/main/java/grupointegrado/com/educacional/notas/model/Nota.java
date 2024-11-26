@@ -1,5 +1,9 @@
 package grupointegrado.com.educacional.notas.model;
 
+import grupointegrado.com.educacional.aluno.model.Aluno;
+import grupointegrado.com.educacional.cursos.model.Curso;
+import grupointegrado.com.educacional.disciplinas.model.Disciplina;
+import grupointegrado.com.educacional.turmas.model.Turma;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -16,7 +20,16 @@ public class Nota {
     private Double nota;
 
     @Column
+    @Temporal(TemporalType.DATE)
     private Date data_lancamento;
+
+    @ManyToOne
+    @JoinColumn(name = "aluno_id", referencedColumnName = "id")
+    private Aluno aluno;
+
+    @ManyToOne
+    @JoinColumn(name = "disciplina_id", referencedColumnName = "id")
+    private Disciplina disciplina;
 
     public Integer getId() {
         return id;
@@ -40,5 +53,21 @@ public class Nota {
 
     public void setData_lancamento(Date data_lancamento) {
         this.data_lancamento = data_lancamento;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 }

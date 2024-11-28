@@ -51,6 +51,8 @@ public class DisciplinaController {
 
         disciplina.setNome(dto.nome());
         disciplina.setCodigo(dto.codigo());
+        disciplina.setCurso(dto.curso());
+        disciplina.setProfessor(dto.professor());
 
         return ResponseEntity.ok(this.repository.save(disciplina));
     }

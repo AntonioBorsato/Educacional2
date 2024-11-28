@@ -48,6 +48,8 @@ public class NotaController {
 
         nota.setNota(dto.nota());
         nota.setData_lancamento(dto.data_lancamento());
+        nota.setDisciplina(dto.disciplina());
+        nota.setAluno(dto.aluno());
 
         return ResponseEntity.ok(this.repository.save(nota));
     }
